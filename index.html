@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <title> Bootstrap Form Validate </title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/form-validation.css">
+    </head>
+<body>
+
+<div class="container">
+	<!-- Input Validation start -->
+        <section id="input-validation">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title"><i class="fa fa-edit"></i> Bootstrap Form Validate</h4>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-body">
+                                <form novalidate action="" method="post">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group mb-2">
+                                                <label>Bu alan gereklidir</label>
+                                                <div class="controls">
+                                                    <input type="text" name="text" class="form-control" data-validation-required-message="Bu alan gereklidir" placeholder="Başlık">
+                                                    <pre><code>data-validation-required-message="Bu alan gereklidir"</code></pre>
+                                                </div>
+                                            </div>
+                                            <div class="form-group mb-2">
+                                                <label>Yalnızca rakamlardan oluşmalıdır</label>
+                                                <div class="controls">
+                                                    <input type="text" name="numeric" class="form-control" required data-validation-containsnumber-regex="(\d)+" data-validation-containsnumber-message="Sayısal alan yalnızca sayısal karakterler içerebilir." placeholder="Yalnızca Sayı Girin">
+                                                    <pre><code>required data-validation-containsnumber-regex="(\d)+" data-validation-containsnumber-message="Sayısal alan yalnızca sayısal karakterler içerebilir."</code></pre>
+                                                </div>
+                                            </div>
+                                            <div class="form-group mb-2">
+                                                <label>Sadece alfabetik karakterler</label>
+                                                <div class="controls">
+                                                    <input type="text" name="alpha" class="form-control" required data-validation-containsnumber-regex="^[a-zA-Z]+$" data-validation-containsnumber-message="Alfa alanı yalnızca alfabetik karakterler içerebilir." placeholder="Yalnızca Karakter Girin">
+                                                    <pre><code>required data-validation-containsnumber-regex="^[a-zA-Z]+$" data-validation-containsnumber-message="Alfa alanı yalnızca alfabetik karakterler içerebilir."</code></pre>
+                                                </div>
+                                            </div>
+                                            <div class="form-group mb-2">
+                                                <label>Şifre Giriş Alanı</label>
+                                                <div class="controls">
+                                                    <input type="password" name="password" class="form-control" data-validation-required-message="Bu alan gereklidir" placeholder="Parola">
+                                                    <pre><code>data-validation-required-message="Bu alan gereklidir"</code></pre>
+                                                </div>
+                                            </div>
+                                            <div class="form-group mb-2">
+                                                <label>Şifrenin eşleşmesi gerektiğini onaylayın</label>
+                                                <div class="controls">
+                                                    <input type="password" name="password2" data-validation-match-match="password" class="form-control" data-validation-required-message="Şifrenin eşleşmesi gerektiğini onaylayın" placeholder="Şifreyi Onayla">
+                                                    <pre><code>data-validation-required-message="Şifrenin eşleşmesi gerektiğini onaylayın"</code></pre>
+                                                </div>
+                                            </div>
+                                            <div class="form-group mb-2">
+                                                <label>Geçerli bir e-posta olmalıdır</label>
+                                                <div class="controls">
+                                                    <input type="email" name="email" class="form-control" data-validation-required-message="Geçerli bir e-posta olmalıdır" placeholder="E-posta">
+                                                    <pre><code>data-validation-required-message="Geçerli bir e-posta olmalıdır"</code></pre>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group mb-2">
+                                                <label>10 ile 20 arasında bir sayı girin</label>
+                                                <div class="controls">
+                                                    <input type="number" class="form-control" data-validation-regex-regex="([^a-z]*[A-Z]*)*" data-validation-containsnumber-regex="([^0-9]*[0-9]+)+" min="10" max="20" data-validation-containsnumber-message="10 ile 20 arasında bir sayı girin" required placeholder="10 ile 20 arasında bir sayı girin">
+                                                    <pre><code>data-validation-regex-regex="([^a-z]*[A-Z]*)*" data-validation-containsnumber-regex="([^0-9]*[0-9]+)+" min="10" max="20" data-validation-containsnumber-message="10 ile 20 arasında bir sayı girin"</code></pre>
+                                                </div>
+                                            </div>
+                                            <div class="form-group mb-2">
+                                                <label>Belirtilen normal ifadeyle eşleşmelidir : ^([0-9]+)$ - sadece sayılar</label>
+                                                <div class="controls">
+                                                    <input type="text" name="text" class="form-control" data-validation-containsnumber-regex="^([0-9]+)$" data-validation-containsnumber-message="Normal ifade alanı biçimi geçersiz." placeholder="Belirtilen normal ifadeyi girin" required>
+                                                    <pre><code>data-validation-containsnumber-regex="^([0-9]+)$" data-validation-containsnumber-message="Normal ifade alanı biçimi geçersiz."</code></pre>
+                                                </div>
+                                            </div>
+                                            <div class="form-group mb-2">
+                                                <label>Uzunluk belirtilen uzunluktan az olmamalıdır : 3</label>
+                                                <div class="controls">
+                                                    <input type="text" name="minChar" class="form-control" data-validation-required-message="Min alanı en az 3 karakter olmalıdır." minlength="3" placeholder="En az 3 karakter girin">
+                                                    <pre><code>data-validation-required-message="Min alanı en az 3 karakter olmalıdır." minlength="3"</code></pre>
+                                                </div>
+                                            </div>
+                                            <div class="form-group mb-2">
+                                                <label>Rakam alanı sayısal olmalı ve tam olarak 3 rakam içermelidir</label>
+                                                <div class="controls">
+                                                    <input type="text" name="digit" class="form-control" data-validation-regex-regex="([^a-z]*[A-Z]*)*" data-validation-containsnumber-regex="([^0-9]*[0-9]+)+" data-validation-required-message="Rakam alanı sayısal olmalı ve tam olarak 3 rakam içermelidir" maxlength="3" minlength="3" placeholder="Tam olarak 3 basamak girin">
+                                                    <pre><code>data-validation-regex-regex="([^a-z]*[A-Z]*)*" data-validation-containsnumber-regex="([^0-9]*[0-9]+)+" data-validation-required-message="Rakam alanı sayısal olmalı ve tam olarak 3 rakam içermelidir" maxlength="3" minlength="3"</code></pre>
+                                                </div>
+                                            </div>
+                                            <div class="form-group mb-2">
+                                                <label>Yalnızca alfabetik karakterler, sayılar, kısa çizgiler veya alt çizgiler</label>
+                                                <div class="controls">
+                                                    <input type="text" name="reg-exp" class="form-control" data-validation-regex-regex="^[-a-zA-Z_\d]+$" data-validation-regex-message="Karakter, Sayı, Kısa Çizgi veya Alt Çizgi Girilmelidir" placeholder="Karakter, Sayı, Kısa Çizgi, Alt Çizgi Girin" required>
+                                                    <pre><code>data-validation-regex-regex="^[-a-zA-Z_\d]+$" data-validation-regex-message="Karakter, Sayı, Kısa Çizgi veya Alt Çizgi Girilmelidir"</code></pre>
+                                                </div>
+                                            </div>
+                                            <div class="form-group mb-2">
+                                                <label>Geçerli bir URL olmalıdır</label>
+                                                <div class="controls">
+                                                    <input type="text" name="url" class="form-control" data-validation-regex-regex="^(http(s)?:\/\/)?(www\.)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$" data-validation-regex-message="Geçerli bir URL olmalıdır" placeholder="Geçerli bir URL girin" required>
+                                                    <pre><code>data-validation-regex-regex="^(http(s)?:\/\/)?(www\.)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$" data-validation-regex-message="Geçerli bir URL olmalıdır"</code></pre>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Kaydet</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Input Validation end -->
+</div>
+
+<script src="vendors/js/vendors.min.js"></script>
+<script src="vendors/js/jqBootstrapValidation.js"></script>
+<script src="js/form-validation.js"></script>
+</body>
+</html>
